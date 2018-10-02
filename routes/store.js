@@ -5,13 +5,19 @@ const connection = mysql.createConnection(dbconfig);
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  const query = 'SELECT name, address, gpslat, gpslon, loadguide FROM Store';
+  console.log('# req: ', req);
+  console.log('# res: ', res);
+
+  const query =
+    'SELECT name, address, gpslat, gpslon, loadguide FROM Store ORDER BY name LIMIT 0, 100';
 
   connection.query(query, (error, rows) => {
     if (error) throw error;
-    console.log('#### Row: ', rows[0]);
-    res.send(rows);
+
+    res.json(rows);
+
   });
+
 });
 
 module.exports = router;

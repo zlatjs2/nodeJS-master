@@ -1,12 +1,13 @@
 const express = require('express');
-const app = express();
+const cors = require('cors');
 const rIndex = require('./routes/index');
 const rStore = require('./routes/store');
+const app = express();
+const PORT = 5000;
 
-const PORT = 3001;
+app.set('port', process.env.PORT || PORT);
 
-// app.set('port', process.env.PORT || PORT);
-
+app.use(cors());
 app.use('/', rIndex);
 app.use('/store', rStore);
 
