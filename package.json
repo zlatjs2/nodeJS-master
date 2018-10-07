@@ -1,29 +1,30 @@
 {
-  "name": "nodejs-jwt-example",
-  "version": "1.0.0",
-  "description": "",
+  "name": "nodebird",
+  "version": "0.0.1",
+  "description": "sns service",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zlatjs2/nodeJS-master.git"
+    "url": "https://github.com/zlatjs2/project/nodeBird.git"
   },
-  "author": "seonmi",
+  "author": "zlatjs",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zlatjs2/nodeJS-master/issues"
-  },
-  "homepage": "https://github.com/zlatjs2/nodeJS-master#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
-    "jsonwebtoken": "^8.3.0",
-    "mongoose": "^5.3.1",
-    "morgan": "^1.9.1"
+    "express-session": "^1.15.6",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.6.1",
+    "path": "^0.12.7",
+    "pug": "^2.0.3",
+    "sequelize": "^4.39.0"
   },
   "devDependencies": {
-    "eslint": "^5.6.1"
+    "nodemon": "^1.18.4"
   }
 }
