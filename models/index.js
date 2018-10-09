@@ -4,10 +4,7 @@ const config = require('../config/config')[env];
 const db = {};
 
 const sequelize = new Sequelize(
-  config.database,
-  config.username,
-  config.password,
-  config
+  config.database, config.username, config.password, config,
 );
 
 db.sequelize = sequelize;
@@ -23,12 +20,12 @@ db.Hashtag.belongsToMany(db.Post, { through: 'PostHashtag' });
 db.User.belongsToMany(db.User, {
   foreignKey: 'followingId',
   as: 'Followers',
-  through: 'Follow'
+  through: 'Follow',
 });
 db.User.belongsToMany(db.User, {
   foreignKey: 'followerId',
   as: 'Followings',
-  through: 'Follow'
+  through: 'Follow',
 });
 
 module.exports = db;
